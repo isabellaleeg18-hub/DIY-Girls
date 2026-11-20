@@ -85,16 +85,17 @@
    Change a variable once here, and every place that uses it changes. */
 :root {
     /* ----- Your assistant's main colors ----- */
-    --primary-color: #4721a7;   /* Main brand color (deep violet). Used in the header gradient, user message bubbles, buttons, the outline around a box you click into, and the 1st typing dot. */
-    --secondary-color: #0f050d; /* Partner color (almost black). It is the second half of every gradient (header, user bubbles, buttons) and the 2nd typing dot. Try a bright color like #e05cc8 (pink) for a bolder look. */
-    --accent: #ffd166;          /* Highlight color (sunny yellow). Used for headings inside the bot's replies and the 3rd typing dot. */
+    --primary-color: hwb(61 50% 7%);   /* Main brand color (deep violet). Used in the header gradient, user message bubbles, buttons, the outline around a box you click into, and the 1st typing dot. */
+    --secondary-color: #62a9e7; /* Partner color (almost black). It is the second half of every gradient (header, user bubbles, buttons) and the 2nd typing dot. Try a bright color like #e05cc8 (pink) for a bolder look. */
+    --accent: hsl(42, 78%, 69%);          /* Highlight color (sunny yellow). Used for headings inside the bot's replies and the 3rd typing dot. */
 
     /* ----- Backgrounds & text ----- */
-    --background: #0f1030;      /* The color behind the whole page (dark navy). */
-    --surface: #1b1d44;         /* The color of the big cards: the chat box. */
-    --surface-2: #262a5a;       /* A slightly lighter color for "inner" areas: the bot's message bubbles and the typing boxes. */
-    --text-primary: #f2f1ff;    /* Main text color (almost white). If you make the backgrounds light, make this dark! */
-    --text-secondary: #a7abdb;  /* Softer text color (light lavender) for labels and small notes. */
+    --background: hsl(56, 74%, 76%);      /* The color behind the whole page (dark navy). */
+    --surface: hsl(333, 69%, 76%);         /* The color of the big cards: the chat box. */
+    --secondary-color: #62a9e7; /* Partner color (almost black). It is the second half of every gradient (header, user bubbles, buttons) and the 2nd typing dot. Try a bright color like #e05cc8 (pink) for a bolder look. */
+    --surface-2: #79b5ea;       /* A slightly lighter color for "inner" areas: the bot's message bubbles and the typing boxes. */
+    --text-primary: #c6e1c5;    /* Main text color (almost white). If you make the backgrounds light, make this dark! */
+    --text-secondary: hsl(58, 74%, 74%);  /* Softer text color (light lavender) for labels and small notes. */
 
     /* ----- The emoji your assistant uses as its face ----- */
     /* --bot-face: "🤖"; */       /* Shown in the round badge at the top AND next to every bot message. Swap in any emoji, like "🦄", "🐱" or "🌟". Keep the quotation marks! */
@@ -105,7 +106,7 @@
        3. Search "Picture version" and uncomment the two rules under it
           (one for the top badge, one for the bot's messages).
        To go back to an emoji, undo all three steps. */
-    --bot-face: url("assets/OIP.jpeg"); /* Your picture: the folder name, a slash, then the file name. */
+    --bot-face: url("assets/usagi\ eating.png"); /* Your picture: the folder name, a slash, then the file name. */
 
     /* ----- Motion ----- */
     --transition-speed: 0.25s;  /* How fast things smoothly change, like a button lifting when you hover over it. Bigger = slower (try 0.6s). */
@@ -141,13 +142,14 @@ body {
        Each radial-gradient is a round, blurry glow. Read them like:
        radial-gradient(SIZE at LEFT-POSITION TOP-POSITION, GLOW COLOR, fades to transparent by X%).
        The first glow in the list is drawn on top. */
-    background:
-        radial-gradient(60rem 60rem at 12% -10%, rgba(139, 92, 255, 0.35), transparent 60%),  /* Purple glow peeking in from the top-left. */
-        radial-gradient(50rem 50rem at 110% 10%, rgba(224, 92, 200, 0.28), transparent 55%), /* Pink glow from just off the right edge. */
-        radial-gradient(45rem 45rem at 50% 120%, rgba(255, 209, 102, 0.14), transparent 60%),/* Faint yellow glow from below the bottom. */
-        var(--background);       /* The solid background color underneath all the glows. */
+        background-image: url(assets/backround.webp);
+       /*background:
+        /*radial-gradient(60rem 60rem at 12% -10%, rgba(139, 92, 255, 0.35), transparent 60%),  /* Purple glow peeking in from the top-left. */
+        /*radial-gradient(50rem 50rem at 110% 10%, rgba(224, 92, 200, 0.28), transparent 55%), /* Pink glow from just off the right edge. */
+        /*radial-gradient(45rem 45rem at 50% 120%, rgba(255, 209, 102, 0.14), transparent 60%),/* Faint yellow glow from below the bottom. */
+        /*var(--background);       /* The solid background color underneath all the glows. */
     background-attachment: fixed; /* Keeps the glows still while you scroll, instead of scrolling away with the page. */
-}
+}   
 
 
 /* =====================================================================
@@ -228,14 +230,14 @@ body {
 /* The big title ("Chatbot"). */
 .header h1 {
     position: relative;         /* Keeps the title above the shine layer. */
-    font-family: 'Baloo 2', 'Nunito', sans-serif; /* A rounder, bolder font for the title. Baloo 2 is loaded from Google Fonts in index.html. */
+    font-family: "Edu NSW ACT Cursive", cursive; /* A rounder, bolder font for the title. Baloo 2 is loaded from Google Fonts in index.html. */
     font-size: 2.6rem;          /* Title size. */
     font-weight: 800;           /* How thick the letters are: 400 is normal, 700 is bold, 800 is extra bold. */
     letter-spacing: 0.5px;      /* Adds a little extra space between letters. */
     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* A soft shadow behind the letters: 0 sideways, 3px down, 10px blur, light black. */
 }
 
-/* The line under the title ("Built by: ..."). */
+/* The line under the title ("Built by: .."). */
 .header p {
     position: relative;         /* Keeps this text above the shine layer. */
     font-size: 1.05rem;         /* Slightly bigger than normal text. */
@@ -311,7 +313,7 @@ body {
 
 /* The panel's heading. */
 .config-panel h2 {
-    font-family: 'Baloo 2', 'Nunito', sans-serif; /* Same rounded font as the main title. */
+    font-family: '', 'Nunito', sans-serif; /* Same rounded font as the main title. */
     font-size: 1.45rem;         /* Heading size. */
     margin-bottom: 1.1rem;      /* Space under the heading. */
     background: var(--brand-gradient); /* These four lines make the TEXT itself show your gradient: paint the gradient... */
@@ -624,7 +626,8 @@ button:disabled {
 .message.assistant h1, .message.assistant h2, .message.assistant h3 {
     font-family: 'Baloo 2', 'Nunito', sans-serif; /* Same rounded font as the main title. */
     margin: 0.5rem 0 0.25rem;   /* 0.5rem above, nothing on the sides, 0.25rem below. */
-    color: var(--accent);       /* Headings use your accent color. */
+    color: var(--accent);       /* Headings use your 
+    . */
 }
 .message.assistant p { margin-bottom: 0.5rem; }     /* Space after each paragraph. */
 .message.assistant p:last-child { margin-bottom: 0; } /* No extra space after the LAST paragraph, so the bubble doesn't have a gap at the bottom. */
